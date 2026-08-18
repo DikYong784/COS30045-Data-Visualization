@@ -1,0 +1,563 @@
+/* =========================================
+   GENERAL STYLES
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.navbar {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 7%;
+
+    background-color: #ffffff;
+
+    border-bottom: 3px solid #e21b23;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Logo */
+
+.logo-link {
+    display: flex;
+    align-items: center;
+
+    transition: transform 0.2s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    display: block;
+
+    padding: 12px 18px;
+
+    color: #333333;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* Mouse-over effect */
+
+.nav-links a:hover {
+    background-color: #e21b23;
+    color: #ffffff;
+}
+
+
+/* Current/active page */
+
+.nav-links a.active {
+    background-color: #e21b23;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero {
+    min-height: 450px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e21b23,
+            #a90000
+        );
+
+    color: #ffffff;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background-color: #ffffff;
+    color: #c8102e;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #222222;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.page-header {
+    padding: 70px 7%;
+
+    text-align: center;
+
+    background-color: #f4f4f4;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.page-header h1 {
+    font-size: 2.7rem;
+
+    color: #c8102e;
+
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   CONTENT SECTIONS
+   ========================================= */
+
+.content-section {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 60px 30px;
+}
+
+.content-section h2 {
+    margin-bottom: 25px;
+
+    color: #c8102e;
+
+    font-size: 2rem;
+}
+
+.content-section h3 {
+    color: #333333;
+
+    margin-bottom: 10px;
+}
+
+.content-section p {
+    margin-bottom: 18px;
+}
+
+
+/* Light background section */
+
+.light-section {
+    max-width: none;
+
+    padding-left: 7%;
+    padding-right: 7%;
+
+    background-color: #f7f7f7;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.card-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.card {
+    padding: 25px;
+
+    background-color: #ffffff;
+
+    border-top: 5px solid #e21b23;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: #c8102e;
+}
+
+
+/* =========================================
+   FAQ
+   ========================================= */
+
+.faq-container {
+    max-width: 900px;
+
+    margin: 30px auto 0;
+}
+
+.faq-item {
+    margin-bottom: 12px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+}
+
+.faq-question {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
+    border: none;
+
+    background-color: #f5f5f5;
+
+    color: #333333;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #e21b23;
+    color: #ffffff;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+
+    margin-left: 15px;
+}
+
+
+/* Answer is hidden by default */
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 20px;
+
+    background-color: #ffffff;
+
+    transition:
+        max-height 0.3s ease,
+        padding 0.3s ease;
+}
+
+
+/* Answer shown when JavaScript adds "open" */
+
+.faq-item.open .faq-answer {
+    max-height: 300px;
+
+    padding: 20px;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+
+/* =========================================
+   INFORMATION LIST
+   ========================================= */
+
+.information-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.info-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    border-left: 5px solid #e21b23;
+
+    background-color: #f7f7f7;
+
+    border-radius: 5px;
+}
+
+.info-number {
+    min-width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #e21b23;
+
+    color: #ffffff;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   TIPS
+   ========================================= */
+
+.tips-list {
+    max-width: 800px;
+
+    margin: 20px auto;
+
+    padding-left: 25px;
+}
+
+.tips-list li {
+    margin-bottom: 15px;
+
+    padding-left: 5px;
+}
+
+
+/* =========================================
+   AI ACKNOWLEDGEMENT
+   ========================================= */
+
+.ai-section {
+    background-color: #fff7f7;
+
+    border-left: 5px solid #e21b23;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    padding: 30px 7%;
+
+    background-color: #222222;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+
+    font-size: 0.9rem;
+}
+
+footer strong {
+    color: #ff4b55;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        padding: 10px 12px;
+
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        min-height: 400px;
+
+        padding: 50px 25px;
+
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .page-header {
+        padding: 50px 20px;
+    }
+
+    .page-header h1 {
+        font-size: 2.1rem;
+    }
+
+    .content-section {
+        padding: 45px 20px;
+    }
+
+    .light-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .content-section h2 {
+        font-size: 1.7rem;
+    }
+
+    .info-item {
+        gap: 12px;
+    }
+
+    footer {
+        padding: 25px 20px;
+    }
+}
