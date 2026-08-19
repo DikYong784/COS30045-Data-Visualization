@@ -1,6 +1,4 @@
-/* =========================================
-   FAQ ACCORDION
-   ========================================= */
+/* FAQ ACCORDION */
 
 const faqQuestions = document.querySelectorAll(".faq-question");
 
@@ -56,9 +54,7 @@ faqQuestions.forEach(function (question) {
 });
 
 
-/* =========================================
-   CURRENT YEAR
-   ========================================= */
+/* CURRENT YEAR */
 
 const yearElement = document.getElementById("current-year");
 
