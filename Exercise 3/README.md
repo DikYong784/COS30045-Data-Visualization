@@ -1,5 +1,75 @@
 # Exercise 3 – Data Story: TV Energy Consumption
 
+# About the Data
+
+# Data Source
+
+The television energy consumption data used in this project comes from the dataset provided for the subject's Exercise 2. The dataset contains information about televisions and their energy consumption. The data was used to explore relationships between television characteristics and electricity use.
+
+The data was selected because television energy consumption is relevant to household electricity use and can be presented clearly through data visualisation.
+
+---
+# Data Processing
+
+The data was explored and processed before creating the visualisations. The main steps included:
+
+Checking the dataset for missing or incorrect values.
+Selecting the variables relevant to television energy consumption.
+Grouping television data where required.
+Calculating averages for comparisons.
+Organising the data into categories such as screen size and television technology.
+Creating charts to make patterns and differences easier to understand.
+
+The processed data was then used to create the visualisations displayed on the website.
+
+---
+
+# Privacy
+
+The dataset used for this project does not require personal information from website users. The visualisations focus on television and energy consumption data rather than individual people.
+
+No personal information is collected, stored or displayed by this website.
+
+Accuracy and Limitations
+
+The visualisations are based on the available dataset and therefore represent the information contained in that dataset.
+
+There are some limitations:
+
+The dataset may not include every television model available in Australia.
+Energy consumption can vary between individual models.
+Actual electricity use depends on factors such as usage time, brightness and settings.
+Some data may be based on measurements under specific testing conditions.
+A relationship shown in the data does not necessarily mean that one factor directly causes another.
+The results should therefore be used as general information rather than an exact prediction of household electricity bills.
+
+These limitations were considered when interpreting the visualisations and writing the data story.
+
+---
+
+# Ethics
+
+The project aims to present the data accurately and clearly without misleading the audience.
+
+The visualisations are designed to help users understand television energy consumption rather than promote a particular television brand or product.
+
+Care was taken to:
+
+Present the data honestly.
+Avoid changing the data to create misleading results.
+Clearly explain the purpose of each visualisation.
+Acknowledge limitations in the dataset.
+Avoid making unsupported claims.
+Consider how the information could affect consumer decisions.
+
+---
+
+# AI Declaration
+
+ChatGPT were used to assist with example code and code structure.
+
+---
+
 ## Overview
 
 In this exercise, you will develop a **data story** based on the **TV Energy Consumption dataset**. Using the website created in **Exercise 0.2**, you will extend your work to present a meaningful narrative supported by data visualisations.

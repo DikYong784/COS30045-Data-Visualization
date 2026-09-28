@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exercise 4.1 - SVG House</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f7f5;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        .house-svg {
+            width: 800px;
+            max-width: 95%;
+            border: 2px solid #333;
+            background-color: #87ceeb;
+        }
+
+        .window {
+            fill: #bde7ff;
+            stroke: #333;
+            stroke-width: 3;
+        }
+
+        .window-cross {
+            stroke: #333;
+            stroke-width: 2;
+        }
+
+        .tree-trunk {
+            fill: #8b5a2b;
+        }
+
+        .tree-leaves {
+            fill: #4caf50;
+            stroke: #256b2b;
+            stroke-width: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My SVG House and Garden</h1>
+
+    <svg class="house-svg"
+         viewBox="0 0 800 500"
+         xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Sky -->
+        <rect x="0"
+              y="0"
+              width="800"
+              height="500"
+              fill="#87ceeb" />
+
+
+        <!-- Sun: circle -->
+        <circle cx="700"
+                cy="80"
+                r="45"
+                fill="#ffd700"
+                stroke="#e6a800"
+                stroke-width="4" />
+
+
+        <!-- Grass -->
+        <rect x="0"
+              y="380"
+              width="800"
+              height="120"
+              fill="#6fbe44" />
+
+
+        <!-- Path -->
+        <polygon points="350,500 470,500 430,350 390,350"
+                 fill="#c2b280"
+                 stroke="#8f8564"
+                 stroke-width="3" />
+
+
+        <!-- House body -->
+        <rect x="230"
+              y="220"
+              width="340"
+              height="180"
+              fill="#f4c2a1"
+              stroke="#333"
+              stroke-width="5" />
+
+
+        <!-- Roof -->
+        <polygon points="190,220 400,70 610,220"
+                 fill="#a64b32"
+                 stroke="#333"
+                 stroke-width="5" />
+
+
+        <!-- Chimney -->
+        <rect x="480"
+              y="115"
+              width="50"
+              height="100"
+              fill="#8c8c8c"
+              stroke="#333"
+              stroke-width="4" />
+
+
+        <!-- Door -->
+        <rect x="365"
+              y="300"
+              width="70"
+              height="100"
+              fill="#704214"
+              stroke="#333"
+              stroke-width="4" />
+
+        <!-- Door handle -->
+        <circle cx="420"
+                cy="350"
+                r="6"
+                fill="#ffd700" />
+
+
+        <!-- Windows group -->
+        <g class="window-group">
+
+            <!-- Left window -->
+            <g transform="translate(255,260)">
+
+                <rect x="0"
+                      y="0"
+                      width="75"
+                      height="60"
+                      class="window" />
+
+                <line x1="37.5"
+                      y1="0"
+                      x2="37.5"
+                      y2="60"
+                      class="window-cross" />
+
+                <line x1="0"
+                      y1="30"
+                      x2="75"
+                      y2="30"
+                      class="window-cross" />
+
+            </g>
+
+
+            <!-- Right window -->
+            <g transform="translate(470,260)">
+
+                <rect x="0"
+                      y="0"
+                      width="75"
+                      height="60"
+                      class="window" />
+
+                <line x1="37.5"
+                      y1="0"
+                      x2="37.5"
+                      y2="60"
+                      class="window-cross" />
+
+                <line x1="0"
+                      y1="30"
+                      x2="75"
+                      y2="30"
+                      class="window-cross" />
+
+            </g>
+
+        </g>
+
+
+        <!-- Tree -->
+        <rect x="90"
+              y="280"
+              width="35"
+              height="110"
+              class="tree-trunk" />
+
+        <circle cx="107"
+                cy="240"
+                r="55"
+                class="tree-leaves" />
+
+        <circle cx="65"
+                cy="270"
+                r="40"
+                class="tree-leaves" />
+
+        <circle cx="150"
+                cy="270"
+                r="40"
+                class="tree-leaves" />
+
+
+        <!-- Flowers -->
+        <circle cx="650"
+                cy="390"
+                r="8"
+                fill="#ff69b4" />
+
+        <circle cx="680"
+                cy="410"
+                r="8"
+                fill="#ff69b4" />
+
+        <circle cx="620"
+                cy="420"
+                r="8"
+                fill="#ff69b4" />
+
+
+        <!-- Flower stems -->
+        <line x1="650"
+              y1="390"
+              x2="650"
+              y2="430"
+              stroke="green"
+              stroke-width="3" />
+
+        <line x1="680"
+              y1="410"
+              x2="680"
+              y2="450"
+              stroke="green"
+              stroke-width="3" />
+
+        <line x1="620"
+              y1="420"
+              x2="620"
+              y2="460"
+              stroke="green"
+              stroke-width="3" />
+
+
+        <!-- Text -->
+        <text x="400"
+              y="45"
+              text-anchor="middle"
+              font-size="28"
+              font-weight="bold"
+              fill="#333">
+            My House and Garden
+        </text>
+
+    </svg>
+
+</body>
+</html>

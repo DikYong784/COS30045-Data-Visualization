@@ -535,11 +535,3 @@ footer strong {
         padding: 25px 20px;
     }
 }
-
-    /* Responsive SVG container */
-    .responsive-svg-container {
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
-    max-width: 1200px;
-}

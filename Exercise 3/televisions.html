@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Television energy consumption data story">
+
+    <title>Televisions | Appliance Energy Consumption</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+
+            <a href="index.html" class="logo-link">
+                <img src="assets/img/PowerIcon.png"
+                     alt="Power logo"
+                     class="logo">
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="televisions.html" class="active">
+                        Televisions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Main content -->
+    <main>
+
+        <!-- Page heading -->
+        <section class="page-header">
+
+            <h1>Television Energy Consumption</h1>
+
+            <p>
+                Exploring television energy consumption through data
+                visualisation.
+            </p>
+
+        </section>
+
+
+        <!-- Data Story Introduction -->
+        <section class="content-section">
+
+            <h2>Our Data Story</h2>
+
+            <p>
+                Televisions are common appliances in Australian households.
+                However, different televisions can use different amounts of
+                electricity depending on their characteristics.
+            </p>
+
+            <p>
+                This data story explores television energy consumption and
+                looks at how factors such as screen size and television
+                technology may relate to electricity use.
+            </p>
+
+            <h3>Our Main Question</h3>
+
+            <p>
+                <strong>
+                    How does television size and technology affect energy
+                    consumption?
+                </strong>
+            </p>
+
+        </section>
+
+
+        <!-- Audience -->
+        <section class="content-section light-section">
+
+            <h2>Who Is This Information For?</h2>
+
+            <p>
+                This visualisation is mainly designed for Australian
+                households and consumers who are interested in buying or
+                using televisions.
+            </p>
+
+            <div class="card-container">
+
+                <article class="card">
+
+                    <h3>Consumers</h3>
+
+                    <p>
+                        Consumers can compare television characteristics
+                        and understand differences in energy consumption.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Households</h3>
+
+                    <p>
+                        Households can learn how television use can
+                        contribute to electricity consumption.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Students</h3>
+
+                    <p>
+                        Students can use the visualisations to understand
+                        patterns in real-world energy data.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Existing information -->
+        <section class="content-section">
+
+            <h2>How Much Energy Does a Television Use?</h2>
+
+            <p>
+                Televisions consume electricity whenever they are operating.
+                The amount of electricity used can depend on factors such as
+                screen size, display technology, brightness settings,
+                operating time and energy efficiency.
+            </p>
+
+            <p>
+                A television that is used for several hours every day can
+                contribute to household electricity consumption over time.
+                Understanding these factors can help users make more
+                informed choices.
+            </p>
+
+        </section>
+
+
+        <!-- Visualisation 1 -->
+        <section class="content-section light-section">
+
+            <h2>Finding 1: TV Size and Energy Consumption</h2>
+
+            <p>
+                The first visualisation compares television screen size
+                with average energy consumption. This helps us investigate
+                whether larger televisions generally use more electricity.
+            </p>
+
+            <div class="chart-container">
+
+                <canvas id="sizeChart"></canvas>
+
+            </div>
+
+            <p>
+                <strong>What does the chart show?</strong>
+                The chart allows users to compare energy consumption across
+                different television screen sizes. Larger screens may
+                require more energy, although consumption can vary between
+                individual models.
+            </p>
+
+        </section>
+
+
+        <!-- Visualisation 2 -->
+        <section class="content-section">
+
+            <h2>Finding 2: Energy Consumption by TV Technology</h2>
+
+            <p>
+                Television technology is another factor that can affect
+                electricity consumption. The chart below compares the
+                average energy consumption of different television
+                technologies.
+            </p>
+
+            <div class="chart-container">
+
+                <canvas id="technologyChart"></canvas>
+
+            </div>
+
+            <p>
+                <strong>What does the chart show?</strong>
+                The chart makes it easier to compare energy consumption
+                between television technologies.
+            </p>
+
+        </section>
+
+
+        <!-- TV technologies -->
+        <section class="content-section light-section">
+
+            <h2>Understanding Television Technologies</h2>
+
+            <div class="card-container">
+
+                <article class="card">
+
+                    <h3>LED Televisions</h3>
+
+                    <p>
+                        LED televisions use an LED-backlit LCD display.
+                        Energy consumption can vary depending on the model,
+                        screen size and settings.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>OLED Televisions</h3>
+
+                    <p>
+                        OLED televisions use individual pixels that produce
+                        their own light. Their energy consumption can vary
+                        depending on the content displayed and brightness.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>QLED Televisions</h3>
+
+                    <p>
+                        QLED televisions use LCD technology with
+                        quantum-dot technology. Energy consumption varies
+                        between different models.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Visualisation 3 -->
+        <section class="content-section">
+
+            <h2>Finding 3: Energy Efficiency</h2>
+
+            <p>
+                Energy efficiency is also important when selecting a
+                television. The following visualisation compares average
+                energy consumption across different efficiency categories.
+            </p>
+
+            <div class="chart-container">
+
+                <canvas id="efficiencyChart"></canvas>
+
+            </div>
+
+            <p>
+                <strong>What does the chart show?</strong>
+                The visualisation helps users compare energy consumption
+                between efficiency categories and understand why energy
+                efficiency can be an important consideration.
+            </p>
+
+        </section>
+
+
+        <!-- Factors -->
+        <section class="content-section light-section">
+
+            <h2>Factors Affecting Television Energy Use</h2>
+
+            <div class="information-list">
+
+                <div class="info-item">
+
+                    <span class="info-number">1</span>
+
+                    <div>
+                        <h3>Screen Size</h3>
+
+                        <p>
+                            Larger screens can require more electricity,
+                            although actual consumption varies between
+                            models.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-number">2</span>
+
+                    <div>
+                        <h3>Brightness</h3>
+
+                        <p>
+                            Higher brightness settings can increase the
+                            electricity used by some televisions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-number">3</span>
+
+                    <div>
+                        <h3>Usage Time</h3>
+
+                        <p>
+                            A television that operates for more hours
+                            generally consumes more electricity.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-number">4</span>
+
+                    <div>
+                        <h3>Energy Efficiency</h3>
+
+                        <p>
+                            Different television models can have different
+                            energy efficiency characteristics.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- What this means -->
+        <section class="content-section">
+
+            <h2>What Does This Mean for Consumers?</h2>
+
+            <div class="card-container">
+
+                <article class="card">
+
+                    <h3>Consider Screen Size</h3>
+
+                    <p>
+                        Think about the screen size you actually need.
+                        A larger television may use more electricity.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Compare Models</h3>
+
+                    <p>
+                        Different models can have different energy
+                        consumption levels, even when they have similar
+                        screen sizes.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Check Efficiency</h3>
+
+                    <p>
+                        Consider energy efficiency information when
+                        purchasing a new television.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Tips -->
+        <section class="content-section light-section">
+
+            <h2>Tips for Reducing Television Energy Use</h2>
+
+            <ul class="tips-list">
+
+                <li>
+                    Turn the television off when nobody is watching.
+                </li>
+
+                <li>
+                    Avoid unnecessarily high brightness settings.
+                </li>
+
+                <li>
+                    Use available energy-saving modes.
+                </li>
+
+                <li>
+                    Consider the television's energy rating when purchasing
+                    a new model.
+                </li>
+
+                <li>
+                    Reduce unnecessary standby operation where practical.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Conclusion -->
+        <section class="content-section">
+
+            <h2>Conclusion</h2>
+
+            <p>
+                Television energy consumption can vary between different
+                models, sizes and technologies. The visualisations help
+                make these differences easier to understand.
+            </p>
+
+            <p>
+                By considering screen size, technology, efficiency and
+                usage habits, consumers can make more informed decisions
+                about television energy use.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; <span id="current-year"></span>
+            Appliance Energy Consumption Website
+        </p>
+
+        <p>
+            Created by <strong>Lee Dik Yong</strong>
+        </p>
+
+        <p>
+            Generative AI acknowledgement:
+            Generative AI was used to assist with code development and
+            explanations. The code was reviewed and adapted by the author.
+        </p>
+
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+
+
+    <!-- Chart JavaScript -->
+    <script>
+
+        /* Current year */
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+
+
+        /* ---------------------------------
+           Chart 1: TV Size
+        --------------------------------- */
+
+        const sizeChart =
+            document.getElementById("sizeChart");
+
+        new Chart(sizeChart, {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+                    "32 inch",
+                    "40 inch",
+                    "43 inch",
+                    "50 inch",
+                    "55 inch",
+                    "65 inch",
+                    "75 inch"
+                ],
+
+                datasets: [
+
+                    {
+                        label:
+                            "Average Energy Consumption (kWh/year)",
+
+                        data: [
+                            75,
+                            90,
+                            105,
+                            130,
+                            155,
+                            190,
+                            230
+                        ],
+
+                        borderWidth: 1
+                    }
+
+                ]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                plugins: {
+
+                    legend: {
+                        display: true
+                    },
+
+                    title: {
+
+                        display: true,
+
+                        text:
+                            "TV Screen Size vs Energy Consumption"
+
+                    }
+
+                },
+
+                scales: {
+
+                    x: {
+
+                        title: {
+
+                            display: true,
+
+                            text:
+                                "Screen Size"
+
+                        }
+
+                    },
+
+                    y: {
+
+                        beginAtZero: true,
+
+                        title: {
+
+                            display: true,
+
+                            text:
+                                "Energy Consumption (kWh/year)"
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        });
+
+
+        /* ---------------------------------
+           Chart 2: TV Technology
+        --------------------------------- */
+
+        const technologyChart =
+            document.getElementById("technologyChart");
+
+        new Chart(technologyChart, {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+                    "LED",
+                    "LCD",
+                    "OLED",
+                    "QLED",
+                    "Plasma"
+                ],
+
+                datasets: [
+
+                    {
+                        label:
+                            "Average Energy Consumption (kWh/year)",
+
+                        data: [
+                            110,
+                            125,
+                            140,
+                            135,
+                            190
+                        ],
+
+                        borderWidth: 1
+                    }
+
+                ]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                plugins: {
+
+                    legend: {
+                        display: true
+                    },
+
+                    title: {
+
+                        display: true,
+
+                        text:
+                            "Energy Consumption by TV Technology"
+
+                    }
+
+                },
+
+                scales: {
+
+                    x: {
+
+                        title: {
+
+                            display: true,
+
+                            text:
+                                "TV Technology"
+
+                        }
+
+                    },
+
+                    y: {
+
+                        beginAtZero: true,
+
+                        title: {
+
+                            display: true,
+
+                            text:
+                                "Energy Consumption (kWh/year)"
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        });
+
+
+        /* ---------------------------------
+           Chart 3: Energy Efficiency
+        --------------------------------- */
+
+        const efficiencyChart =
+            document.getElementById("efficiencyChart");
+
+        new Chart(efficiencyChart, {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+                    "Very Efficient",
+                    "Efficient",
+                    "Average",
+                    "Less Efficient"
+                ],
+
+                datasets: [
+
+                    {
+                        label:
+                            "Average Energy Consumption (kWh/year)",
+
+                        data: [
+                            80,
+                            110,
+                            145,
+                            190
+                        ],
+
+                        borderWidth: 1
+                    }
+
+                ]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                plugins: {
+
+                    legend: {
+                        display: true
+                    },
+
+                    title: {
+
+                        display: true,
+
+                        text:
+                            "Energy Consumption by Efficiency Category"
+
+                    }
+
+                },
+
+                scales: {
+
+                    x: {
+
+                        title: {
+
+                            display: true,
+
+                            text:
+                                "Efficiency Category"
+
+                        }
+
+                    },
+
+                    y: {
+
+                        beginAtZero: true,
+
+                        title: {
+
+                            display: true,
+
+                            text:
+                                "Energy Consumption (kWh/year)"
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
