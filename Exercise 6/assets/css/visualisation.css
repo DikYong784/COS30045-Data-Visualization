@@ -1,0 +1,25 @@
+.responsive-svg-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.responsive-svg-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+}
+
+.axis-label { font-size: 14px; fill: #333; }
+
+.bar:hover { opacity: 0.85; }
+
+/* Tooltip (Exercise 6.4) */
+.tooltip { pointer-events: none; }
+.tooltip-text { font-size: 12px; fill: #ffffff; }
+.tooltip-text .tt-title { font-weight: bold; }
+
+/* Legend (Exercise 6.3) */
+.legend text { font-size: 12px; fill: #333; }

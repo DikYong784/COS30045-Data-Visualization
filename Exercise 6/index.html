@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TV Energy Consumption</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/visualisation.css">
+</head>
+<body>
+  <header>
+    <h1>TV Energy Consumption</h1>
+    <p>Exploring energy consumption, star rating and screen type across TV models.</p>
+  </header>
+
+  <main class="chart-grid">
+
+    <section class="chart-card">
+      <h2>Energy Consumption Histogram</h2>
+      <p>Number of TV models by energy consumption. Use the buttons to filter by screen type.</p>
+      <div id="filters_screen"></div>
+      <div id="histogram" class="responsive-svg-container"></div>
+    </section>
+
+    <section class="chart-card">
+      <h2>Energy Consumption by Star Rating</h2>
+      <p>Each dot is a TV model, coloured by screen type. Hover over a dot for details.</p>
+      <div id="scatterplot" class="responsive-svg-container"></div>
+    </section>
+
+  </main>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="js/shared-constants.js"></script>
+  <script src="js/load-data.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/histogram.js"></script>
+  <script src="js/scatterplot.js"></script>
+</body>
+</html>
