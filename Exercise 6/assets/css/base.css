@@ -1,50 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #ffffff;
-  color: #333;
-  margin: 0;
-  padding: 20px 24px 48px;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
 }
 
-h1 { color: #c8102e; margin-bottom: 4px; }
-h2 { color: #c8102e; font-size: 1.15rem; margin: 0 0 4px; }
-p  { margin: 0 0 12px; }
-
-.chart-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-  gap: 32px 28px;
-  margin-top: 24px;
+header {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-@media (max-width: 520px) {
-  .chart-grid { grid-template-columns: 1fr; }
+header h1 {
+    margin: 0 0 10px;
+    font-size: 36px;
 }
 
-/* Filter buttons (Exercise 6.2) */
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.controls,
+.chart-section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.controls h2,
+.chart-section h2 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+
+/* Filter buttons */
+
 #filters_screen {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.filter-btn {
-  font-family: inherit;
-  font-size: 14px;
-  padding: 6px 16px;
-  border: 1px solid #c8102e;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #c8102e;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+.filter-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #de8a1c;
+    font-size: 15px;
 }
 
-.filter-btn:hover { background: #fbe6ea; }
-.filter-btn:focus-visible { outline: 3px solid #333; outline-offset: 2px; }
+.filter-button:hover {
+    background-color: #9ca3af;
+}
 
-.filter-btn.active {
-  background: #c8102e;
-  color: #ffffff;
+.filter-button.active {
+    background-color: #4ac023;
+    color: white;
 }

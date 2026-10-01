@@ -1,25 +1,53 @@
+/* Responsive SVG */
+
 .responsive-svg-container {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .responsive-svg-container svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.axis-label { font-size: 14px; fill: #333; }
 
-.bar:hover { opacity: 0.85; }
+/* Histogram bars */
 
-/* Tooltip (Exercise 6.4) */
-.tooltip { pointer-events: none; }
-.tooltip-text { font-size: 12px; fill: #ffffff; }
-.tooltip-text .tt-title { font-weight: bold; }
+.bar {
+    fill: #2563eb;
+}
 
-/* Legend (Exercise 6.3) */
-.legend text { font-size: 12px; fill: #333; }
+.bar:hover {
+    fill: #1d4ed8;
+}
+
+
+/* Axis */
+
+.axis text {
+    font-size: 12px;
+}
+
+.axis path,
+.axis line {
+    stroke: #555;
+}
+
+
+/* Axis labels */
+
+.axis-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Chart title */
+
+.chart-title {
+    font-size: 18px;
+    font-weight: bold;
+}

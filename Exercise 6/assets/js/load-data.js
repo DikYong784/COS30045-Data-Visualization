@@ -1,69 +1,43 @@
-// Finds the first column whose name contains one of the keywords
-const findCol = (columns, keywords) => {
-  for (const k of keywords) {
-    const hit = columns.find(c => c.toLowerCase().includes(k));
-    if (hit) return hit;
-  }
-  return undefined;
-};
+d3.csv("data/W6_TVdata.csv", d => {
 
-// Shows a problem on the page as well as in the console
-const showError = msg => {
-  console.error(msg);
-  d3.select("#histogram")
-    .append("p")
-    .style("color", "#c8102e")
-    .style("font-weight", "bold")
-    .text(msg);
-};
+    return {
+        brand: d.brand,
+        model: d.model,
+        star2: +d.star2,
+        energyConsumption: +d.energyConsumption,
+        screenTechnology: d.screenTech
+    };
 
-d3.text("data/W6_TVdata.csv").then(text => {
+}).then(data => {
 
-  // Remove a BOM and detect , or ; as the delimiter
-  text = text.replace(/^\uFEFF/, "");
-  const delimiter = text.split("\n")[0].includes(";") ? ";" : ",";
-  const raw = d3.dsvFormat(delimiter).parse(text);
+    console.log("Data loaded:");
+    console.log(data);
 
-  console.log("Delimiter:", delimiter);
-  console.log("Columns:", raw.columns);
+    console.log("Number of records:");
+    console.log(data.length);
 
-  const cols = raw.columns;
-  const brandCol  = findCol(cols, ["brand"]);
-  const modelCol  = findCol(cols, ["model"]);
-  const starCol   = findCol(cols, ["star2", "star"]);
-  const energyCol = findCol(cols, ["energy"]);
-  const techCol   = findCol(cols, ["tech", "type"]);
-  const sizeCol   = findCol(cols, ["size"]);
+    console.log("Maximum energy:");
+    console.log(
+        d3.max(data, d => d.energyConsumption)
+    );
 
-  console.log("Using columns:", { brandCol, modelCol, starCol, energyCol, techCol, sizeCol });
+    console.log("Minimum energy:");
+    console.log(
+        d3.min(data, d => d.energyConsumption)
+    );
 
-  if (!energyCol || !starCol) {
-    showError("Could not find the energy or star column. Columns are: " + cols.join(", "));
-    return;
-  }
+    console.log("Energy extent:");
+    console.log(
+        d3.extent(
+            data,
+            d => d.energyConsumption
+        )
+    );
 
-  const data = raw
-    .map(d => ({
-      brand: d[brandCol],
-      model: d[modelCol],
-      star: +d[starCol],
-      energyConsumption: +d[energyCol],
-      screenTech: (d[techCol] || "").trim(),
-      screenSize: +d[sizeCol]
-    }))
-    .filter(d => !isNaN(d.energyConsumption) && !isNaN(d.star));
+    // Draw histogram
+    drawHistogram(data);
 
-  console.log("Cleaned data:", data.length, "rows", data);
+    // Create filters
+    populateFilters(data);
 
-  if (data.length === 0) {
-    showError("No valid rows after cleaning. Check the energy and star columns hold numbers.");
-    return;
-  }
-
-  drawHistogram(data);
-  populateFilters(data);
-  drawScatterplot(data);
-  createTooltip();
-  handleMouseEvents();
-})
-.catch(err => showError("Could not load data/W6_TVdata.csv. Check the file name, the folder and that you are using a local server. (" + err.message + ")"));
+});

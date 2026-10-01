@@ -1,73 +1,213 @@
-const drawHistogram = data => {
+function drawHistogram(data) {
 
-  const svg = d3.select("#histogram")
-    .append("svg")
-    .attr("viewBox", `0 0 ${width} ${height}`);
+    // Remove old chart
+    d3.select("#histogram")
+        .selectAll("*")
+        .remove();
 
-  innerChart = svg.append("g")
-    .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-  // Bins
-  const bins = binGenerator(data);
-  console.log("Bins:", bins);
+    // ==========================================
+    // CREATE SVG
+    // ==========================================
 
-  // Scales
-  const minX = bins[0].x0;
-  const maxX = bins[bins.length - 1].x1;
-  const binsMaxLength = d3.max(bins, d => d.length);
+    const svg =
+        d3.select("#histogram")
+            .append("svg")
+            .attr(
+                "viewBox",
+                `0 0 ${width} ${height}`
+            );
 
-  xScale.domain([minX, maxX]).range([0, innerChartWidth]);
-  yScale.domain([0, binsMaxLength]).nice().range([innerChartHeight, 0]);
 
-  // Axes
-  innerChart.append("g")
-    .attr("class", "x-axis")
-    .attr("transform", `translate(0, ${innerChartHeight})`)
-    .call(d3.axisBottom(xScale));
+    // ==========================================
+    // INNER CHART
+    // ==========================================
 
-  innerChart.append("g")
-    .attr("class", "y-axis")
-    .call(d3.axisLeft(yScale));
+    const innerChart =
+        svg.append("g")
+            .attr(
+                "transform",
+                `translate(
+                    ${margin.left},
+                    ${margin.top}
+                )`
+            );
 
-  // Axis labels
-  innerChart.append("text")
-    .attr("class", "axis-label")
-    .attr("x", innerChartWidth / 2)
-    .attr("y", innerChartHeight + 55)
-    .attr("text-anchor", "middle")
-    .text("Energy Consumption");
 
-  innerChart.append("text")
-    .attr("class", "axis-label")
-    .attr("transform", "rotate(-90)")
-    .attr("x", -innerChartHeight / 2)
-    .attr("y", -55)
-    .attr("text-anchor", "middle")
-    .text("Number of TV Models");
+    // ==========================================
+    // CREATE BINS
+    // ==========================================
 
-  renderBars(bins);
-};
+    const bins = binGenerator(data);
 
-// Draws or updates the bars (also used by the filters in interactions.js)
-const renderBars = bins => {
-  innerChart.selectAll(".bar")
-    .data(bins)
-    .join(
-      enter => enter.append("rect")
+    console.log("Bins:");
+    console.log(bins);
+
+
+    // ==========================================
+    // X SCALE DOMAIN
+    // ==========================================
+
+    const xMin =
+        bins.length > 0
+            ? bins[0].x0
+            : 0;
+
+    const xMax =
+        bins.length > 0
+            ? bins[bins.length - 1].x1
+            : 100;
+
+
+    xScale
+        .domain([xMin, xMax])
+        .range([0, innerWidth]);
+
+
+    // ==========================================
+    // Y SCALE DOMAIN
+    // ==========================================
+
+    const binsMaxLength =
+        d3.max(
+            bins,
+            d => d.length
+        ) || 1;
+
+
+    yScale
+        .domain([0, binsMaxLength])
+        .nice()
+        .range([innerHeight, 0]);
+
+
+    // ==========================================
+    // DRAW BARS
+    // ==========================================
+
+    innerChart
+        .selectAll(".bar")
+        .data(bins)
+        .join("rect")
         .attr("class", "bar")
-        .attr("x", d => xScale(d.x0))
-        .attr("width", d => Math.max(0, xScale(d.x1) - xScale(d.x0)))
-        .attr("y", innerChartHeight)
-        .attr("height", 0)
-        .attr("fill", barColor)
-        .attr("stroke", bodyBackgroundColor)
-        .attr("stroke-width", 2),
-      update => update,
-      exit => exit.remove()
-    )
-    .transition()
-    .duration(600)
-    .ease(d3.easeCubicOut)
-    .attr("y", d => yScale(d.length))
-    .attr("height", d => innerChartHeight - yScale(d.length));
-};
+        .attr(
+            "x",
+            d => xScale(d.x0) + 1
+        )
+        .attr(
+            "y",
+            d => yScale(d.length)
+        )
+        .attr(
+            "width",
+            d =>
+                Math.max(
+                    0,
+                    xScale(d.x1) -
+                    xScale(d.x0) -
+                    2
+                )
+        )
+        .attr(
+            "height",
+            d =>
+                innerHeight -
+                yScale(d.length)
+        );
+
+
+    // ==========================================
+    // X AXIS
+    // ==========================================
+
+    innerChart
+        .append("g")
+        .attr(
+            "class",
+            "axis"
+        )
+        .attr(
+            "transform",
+            `translate(
+                0,
+                ${innerHeight}
+            )`
+        )
+        .call(
+            d3.axisBottom(xScale)
+        );
+
+
+    // ==========================================
+    // Y AXIS
+    // ==========================================
+
+    innerChart
+        .append("g")
+        .attr(
+            "class",
+            "axis"
+        )
+        .call(
+            d3.axisLeft(yScale)
+        );
+
+
+    // ==========================================
+    // X AXIS LABEL
+    // ==========================================
+
+    innerChart
+        .append("text")
+        .attr(
+            "class",
+            "axis-label"
+        )
+        .attr(
+            "x",
+            innerWidth / 2
+        )
+        .attr(
+            "y",
+            innerHeight + 60
+        )
+        .attr(
+            "text-anchor",
+            "middle"
+        )
+        .text(
+            "Energy Consumption"
+        );
+
+
+    // ==========================================
+    // Y AXIS LABEL
+    // ==========================================
+
+    innerChart
+        .append("text")
+        .attr(
+            "class",
+            "axis-label"
+        )
+        .attr(
+            "transform",
+            "rotate(-90)"
+        )
+        .attr(
+            "x",
+            -innerHeight / 2
+        )
+        .attr(
+            "y",
+            -60
+        )
+        .attr(
+            "text-anchor",
+            "middle"
+        )
+        .text(
+            "Number of TVs"
+        );
+
+}
