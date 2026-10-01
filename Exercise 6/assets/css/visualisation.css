@@ -17,11 +17,11 @@
 /* Histogram bars */
 
 .bar {
-    fill: #2563eb;
+    fill: #eb2549;
 }
 
 .bar:hover {
-    fill: #1d4ed8;
+    fill: #d81dac;
 }
 
 
@@ -51,3 +51,15 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+   .tooltip-html {
+     position: absolute;
+     pointer-events: none;
+     background: steelblue;
+     color: #fff;
+     padding: 8px 10px;
+     border-radius: 6px;
+     font-size: 12px;
+     line-height: 1.4;
+     z-index: 10;
+   }

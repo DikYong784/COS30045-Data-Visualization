@@ -68,15 +68,15 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #de8a1c;
+    background-color: #d0f30c;
     font-size: 15px;
 }
 
 .filter-button:hover {
-    background-color: #9ca3af;
+    background-color: #31c308;
 }
 
 .filter-button.active {
-    background-color: #4ac023;
+    background-color: #25eb32;
     color: white;
 }

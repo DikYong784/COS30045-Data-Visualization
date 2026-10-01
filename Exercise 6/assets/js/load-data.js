@@ -3,7 +3,7 @@ d3.csv("data/W6_TVdata.csv", d => {
     return {
         brand: d.brand,
         model: d.model,
-        star2: +d.star2,
+        star2: +d.star,
         energyConsumption: +d.energyConsumption,
         screenTechnology: d.screenTech
     };
@@ -39,5 +39,7 @@ d3.csv("data/W6_TVdata.csv", d => {
 
     // Create filters
     populateFilters(data);
+
+    drawScatterplot(data);
 
 });
